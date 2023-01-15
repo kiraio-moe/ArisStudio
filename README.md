@@ -21,7 +21,7 @@
 
 - [WebGl 版 (仅播放 Demo 演示](https://baplayer.dza.vin/)
 
-# [如何使用 How to Use](https://github.com/Tualin14/baPlayer/wiki)
+# [如何使用 How to Use](./Doc/Home.md)
 
 # 来看看一些使用播放器完成的作品吧ヾ(≧▽≦\*)o
 
