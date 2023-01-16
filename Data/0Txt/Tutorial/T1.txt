@@ -1,0 +1,180 @@
+load spr midori midori_spr
+load bgm Theme_64 Theme_64.ogg
+load se Granted SE_Granted_01.wav
+load bg GameDevRoom_Night BG_GameDevRoom_Night.jpg
+
+load cover Player popup02.png
+
+load end
+
+bg set GameDevRoom_Night
+banner2 '教程 1' '特殊与导入命令'
+
+bgm set Theme_64
+label '游戏开发部活动室'
+spr show midori
+===
+
+spr state midori 02
+spr shakeY midori 4 -1 1
+spr emo midori Twinkle
+txt '绿' '游戏开发部' '那么，就让我来告诉老师播放器的使用方法吧！'
+
+spr state midori 01
+txt '绿' '游戏开发部' '首先，给您这个。'
+
+text hide
+spr move midori -10 40
+cover set Player
+===
+
+spr state midori 03
+txt '绿' '游戏开发部' '这个就是播放器，快打开它吧。'
+
+se set Granted
+cover hide
+spr state midori 01
+txt '绿' '游戏开发部' '这次，我来介绍一下特殊和导入命令，老师要先听哪个？'
+
+jump tBF
+
+target tB
+spr x midori -10
+spr state midori 02
+txt '绿' '游戏开发部' '请问老师还要听我讲解哪个命令？'
+
+target tBF
+spr emo midori Q
+button '特殊命令' 'tS' '导入命令' 'tL' 
+
+target tS
+
+spr move midori 0 25
+txt '绿' '游戏开发部' '特殊命令指<b><i>注释，断点，标记，与跳转</i></b>命令。'
+
+spr state midori 02
+txt '绿' '游戏开发部' '注释命令以<color=lime>//(两个正斜杠)</color>开头，效果为不执行当前行，用来向用户提示或解释某些代码的作用和功能。'
+
+spr move midori 5 25
+spr state midori 01
+txt '绿' '游戏开发部' '断点命令以<color=lime>=（等号）</color>开头，效果为等待点击，需要点击才会继续执行接下来的内容。'
+
+spr state midori 02
+txt '绿' '游戏开发部' '需要注意的是，两个断点之间的命令会同时执行，并且txt（文本）、 banner（横幅）、button（选择按钮）自带断点。'
+
+spr state midori 01
+txt '绿' '游戏开发部' '合理的设置断点，可以出现这样的效果。'
+
+text hide
+spr emo midori Idea
+spr move midori -5 25
+spr shakeY midori 8 -1 3
+===
+
+spr state midori 02
+txt '绿' '游戏开发部' '刚才是文本框消失，人物表情，人物移动，人物Y轴抖动效果同时进行。'
+
+spr emo midori E
+spr state midori 05
+txt '绿' '游戏开发部' '不合理的使用，则会造成冲突而出现错误。比如在两个断点之间既设置了人物位置又设置了人物移动，会使人物的位置错乱。'
+
+spr state midori 02
+txt '绿' '游戏开发部' '标记命令格式为<color=lime>target {targetName}</color>，会以老师设置的 targetName 标记当前行。'
+
+spr state midori 01
+txt '绿' '游戏开发部' '与jump（跳转）、button（选择按钮）结合使用。即可使程序跳转到指定位置继续运行。'
+
+spr state midori 02
+txt '绿' '游戏开发部' '跳转命令为<color=lime>jump {targetName}</color>，会跳转到通过target命令标记的地方。'
+
+jump t1
+
+target t1F 
+
+spr emo midori Aggro
+spr state midori 05
+txt '绿' '游戏开发部' '答错了，老师。{targetName}是自定义名称的意思，是用来给标记行命名。我已经命名为<b>tStart</b>了。'
+
+target t1
+
+spr state midori 02
+spr emo midori Action
+txt '绿' '游戏开发部' '那么，请问老师，如果我用<i>target <b>tStart</b></i>标记了一行，我要如何使程序运行跳转到这行？'
+
+
+button 'jump tStart' 't1C' 'jump {targetName}' 't1F' 
+
+target t1C
+spr state midori 03
+spr emo midori Twinkle
+txt '绿' '游戏开发部' '恭喜老师，答对了!'
+
+spr state midori 01
+txt '绿' '游戏开发部' '特殊命令讲解结束。'
+
+jump tB
+
+target tL
+
+txt '绿' '游戏开发部' '加载命令用来加载<b><i>人物(spr)、背景(bg)、覆盖图片(cover)、背景音乐(bgm)、音效(se)</i></b>等游戏素材到播放器。'
+
+spr state midori 05
+txt '绿' '游戏开发部' '需要注意的是，加载命令一定要放到文本的<b>开头</b>， 并且以一行<color=lime>load end</color>结束'
+
+spr state midori 02
+txt '绿' '游戏开发部' '人物加载为<color=lime>load spr {nameId} {sprName}</color>。'
+
+spr state midori 01
+txt '绿' '游戏开发部' '<b>nameId</b>是老师自定义设置的不重复名，为了方便后期调用。 <b>sprName</b>为人物素材名，人物素材统一放在在<b>\Data\Spr</b>文件夹中。'
+
+spr state midori 02
+spr emo midori Chat
+txt '绿' '游戏开发部' '比如加载我的命令为 <color=lime>load spr midori midori_spr</color>'
+
+spr state midori 01
+txt '绿' '游戏开发部' '背景加载为<color=lime>load bg {nameId} {bgName}</color>。 <b>bgName</b>为背景素材文件名，包括后缀（.jpg，.png）背景素材统一放在在<b>\Data\Image\Background</b>文件夹中。'
+
+spr state midori 02
+txt '绿' '游戏开发部' '覆盖图片加载为<color=lime>load cover {nameId} {coverName}</color>。 <b>coverName</b>为覆盖图片素材文件名，也包括后缀（.jpg，.png）覆盖图片素材统一放在在<b>\Data\Image\Cover</b>文件夹中。'
+
+spr state midori 01
+txt '绿' '游戏开发部' '背景音乐加载为<color=lime>load bgm {nameId} {bgmName}</color>。 <b>bgmName</b>为背景音乐素材文件名，同样包括后缀（.ogg，.wav）背景音乐素材统一放在在<b>\Data\Bgm</b>文件夹中。'
+
+spr state midori 02
+txt '绿' '游戏开发部' '音效加载为<color=lime>load se {nameId} {seName}</color>。 <b>seName</b>为音效素材文件名，包括后缀（.ogg，.wav）音效素材统一放在在<b>\Data\SE</b>文件夹中。'
+
+spr state midori 01
+txt '绿' '游戏开发部' '老师应该发现了，不同素材的加载命令是相似的，都以 <color=lime>load 素材类型 自定义id名 素材名称</color> 的格式'
+
+spr state midori 02
+txt '绿' '游戏开发部' '只需记住素材类型，就会使用<color=lime>load</color>命令'
+
+target t2
+
+spr state midori 01
+txt '绿' '游戏开发部' '那么，请问老师。音效的素材类型为？'
+
+button 'spr' 't2F1' 'bgm' 't2F2' 'se' 't2C'
+
+target t2F1
+spr emo midori Aggro
+spr state midori 05
+txt '绿' '游戏开发部' '答错了，spr是人物素材类型。'
+jump t2
+
+target t2F2
+spr emo midori Aggro
+spr state midori 05
+txt '绿' '游戏开发部' '答错了，bgm是背景音乐素材类型。'
+jump t2
+
+target t2C
+spr emo midori Twinkle
+spr state midori 03
+txt '绿' '游戏开发部' '答对了，se是音效素材类型。se其实是Sound Effect（声音效果）的缩写。'
+
+spr state midori 05
+spr emo midori E
+txt '绿' '游戏开发部' '最后，需要再强调一遍，加载命令最后一定要以一行<color=lime>load end</color>结束。'
+
+jump tB

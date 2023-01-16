@@ -1,0 +1,121 @@
+load spr momoi momoi_spr
+load bgm Theme_64 Theme_64.ogg
+load bg GameDevRoom_Night BG_GameDevRoom_Night.jpg
+
+load end
+
+bg set GameDevRoom_Night
+banner2 '教程 2' '选择按钮，小标题，横幅和文本框'
+
+bgm set Theme_64
+label '游戏开发部活动室'
+spr state momoi 01
+spr show momoi
+===
+
+spr state momoi 00
+txt '桃井' '游戏开发部' '这次，由我来讲解文本相关组件。'
+
+spr state momoi 01
+txt '桃井' '游戏开发部' '文本相关组件有个特点，就是除了开头命令外，其余内容需要用<b><i>单引号</i></b>包裹。'
+
+spr state momoi 99
+txt '桃井' '游戏开发部' '这样做是为了使文本支持更多的符号，但也因此无法在文本内容中使用<b><i>单引号</i></b>。'
+
+spr state momoi 05
+spr emo momoi E
+txt '桃井' '游戏开发部' '所以在此教程中，会暂时用"（双引号）替代<b><i>单引号</i></b>的位置。'
+
+spr state momoi 03
+txt '桃井' '游戏开发部' '那么，我们先从选择按钮开始。'
+
+spr state momoi 00
+txt '桃井' '游戏开发部' '一个选择按钮的命令格式为<color=red>button "{按钮内容}" "{targetName}"</color>。'
+
+spr state momoi 01
+txt '桃井' '游戏开发部' 'targetName为用<color=red>target</color>命令设置过的标记。'
+
+spr state momoi 99
+txt '桃井' '游戏开发部' '如果需要两个按钮，命令格式为<color=red>button "{按钮内容1}" "{targetName1}" "{按钮内容2}" "{targetName2}"</color>。'
+
+spr state momoi 01
+txt '桃井' '游戏开发部' '三个按钮则为<color=red>button "{按钮内容1}" "{targetName1}" "{按钮内容2}" "{targetName2}" "{按钮内容3}" "{targetName3}"</color>。'
+
+spr state momoi 00
+spr emo momoi Q
+txt '桃井' '游戏开发部' '下面就是按钮效果，老师您明白了吗？'
+
+button '明白了。' 'tB' '应该？' 'tB'
+
+target tB
+
+spr state momoi 00
+txt '桃井' '游戏开发部' '小标题是播放器左上角显示组件，一般用来说明场景位置。'
+
+spr state momoi 05
+txt '桃井' '游戏开发部' '小标题命令格式为<color=red>label "{小标题内容}"</color>。'
+
+label '游戏开发部活动室'
+spr state momoi 01
+txt '桃井' '游戏开发部' '左上角即为<color=red>label "游戏开发部活动室"</color>的效果。'
+
+spr state momoi 00
+txt '桃井' '游戏开发部' '横幅一般存在于开头，用来显示章节。'
+
+curtain black
+curtain show
+===
+text hide
+spr hide momoi
+===
+
+curtain hide
+banner '这是横幅'
+
+spr state momoi 03
+spr show momoi
+txt '桃井' '游戏开发部' '刚才就是横幅效果。'
+
+spr state momoi 00
+txt '桃井' '游戏开发部' '横幅命令格式为<color=red>banner "{横幅内容}"</color>。'
+
+spr state momoi 01
+txt '桃井' '游戏开发部' '带小标题的横幅命令格式为<color=red>banner2 "{横幅小标题}" "{横幅大标题}"</color>。'
+
+spr state momoi 03
+txt '桃井' '游戏开发部' '教程开头就是用的带小标题的横幅。'
+
+spr state momoi 00
+txt '桃井' '游戏开发部' '最后，是文本框。'
+
+spr state momoi 01
+txt '桃井' '游戏开发部' '文本框是用来显示对话的地方。'
+
+spr state momoi 00
+txt '桃井' '游戏开发部' '命令格式为<color=red>txt "{学生名}" "{社团名}" "{对话内容}"</color>。'
+
+spr state momoi 99
+txt '桃井' '游戏开发部' '隐藏文本框的命令为<color=red>text hide</color>。'
+
+text hide
+===
+
+spr state momoi 01
+txt '桃井' '游戏开发部' '更改预设字体大小命令为<color=red>text size {size}</color>，字号有：'
+
+spr state momoi 00
+text size big
+txt '桃井' '游戏开发部' 'big 大字号。'
+
+text size small
+txt '桃井' '游戏开发部' 'small 小字号。'
+
+text size medium
+txt '桃井' '游戏开发部' 'medium 中字号，也就是通常用的字号。'
+
+spr state momoi 01
+txt '桃井' '游戏开发部' '文本框是支持<b>富文本</b>的，因此可以通过富文本自定义颜色，字号等表现形式。'
+
+spr state momoi 00
+spr emo momoi EQ
+txt '桃井' '游戏开发部' '关于富文本如果需要详细了解，可以看下这个链接： https://docs.unity.cn/cn/2019.3/Manual/StyledText.html'

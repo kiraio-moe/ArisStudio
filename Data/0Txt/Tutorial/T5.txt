@@ -1,0 +1,187 @@
+load spr momoi momoi_spr
+load spr midori midori_spr
+load bgm Theme_64 Theme_64.ogg
+load bg GameDevRoom_Night BG_GameDevRoom_Night.jpg
+
+load end
+
+bg set GameDevRoom_Night
+banner2 '教程 5' '人物'
+
+bgm set Theme_64
+
+label '游戏开发部活动室'
+
+spr show midori
+spr state midori 01
+
+target tB
+buttonS 2 '播放教程' 'tN' '直接预览目前已有表情动画' 'tEmo'
+
+target tN
+
+txt '绿' '游戏开发部' '最后，是人物相关命令。'
+
+spr emo midori Note
+spr move midori -5 25
+spr shakeY midori 4 -1 1
+txt '绿' '游戏开发部' '这次的命令效果将在姐姐身上演示，作为姐姐输掉游戏的惩罚。'
+
+spr x momoi 5
+spr z momoi 1
+spr show momoi
+spr state midori 03
+spr state momoi 04
+spr emo momoi Anxiety
+spr shakeX momoi 10 1 5
+txt '绿' '游戏开发部' '姐姐要听话哦~~'
+
+spr hide momoi
+spr state midori 01
+txt '绿' '游戏开发部' '人物命令以<color=lime>spr</color>开头'
+
+spr show momoi
+txt '绿' '游戏开发部' '<color=lime>spr show {nameId}</color>人物渐变出现。'
+
+spr hide momoi
+txt '绿' '游戏开发部' '<color=lime>spr hide {nameId}</color>人物渐变消失。'
+
+spr showD momoi
+txt '绿' '游戏开发部' '<color=lime>spr showD {nameId}</color>人物直接出现。'
+
+spr hideD momoi
+txt '绿' '游戏开发部' '<color=lime>spr hideD {nameId}</color>人物直接消失。'
+
+spr showD momoi
+txt '绿' '游戏开发部' '<color=lime>spr hl/highlight {nameId}</color>设置高亮。'
+
+spr hl momoi 0.5
+txt '绿' '游戏开发部' '取值范围由暗到明为0.0~1.0。'
+
+spr hl momoi 1
+txt '绿' '游戏开发部' '平常使用0.5和1即可。'
+
+spr comm momoi 
+txt '绿' '游戏开发部' '<color=lime>spr comm/communication {nameId}</color>设置通信效果。'
+
+spr def momoi 
+txt '绿' '游戏开发部' '<color=lime>spr def/default {nameId}</color>设置默认效果。'
+
+spr hide momoi 
+txt '绿' '游戏开发部' '如果需要以通信效果出现，消失。需要在show/hide后面加个C'
+
+spr showC momoi 
+txt '绿' '游戏开发部' '<color=lime>spr showD {nameId}</color>以通信效果出现。'
+
+spr hideC momoi 
+txt '绿' '游戏开发部' '<color=lime>spr showD {nameId}</color>以通信效果消失。'
+
+spr show momoi
+spr state momoi 00
+txt '绿' '游戏开发部' '<color=lime>spr state {nameId} {stateId}</color>是设置面部状态。'
+
+spr state momoi 01
+txt '绿' '游戏开发部' '特别一提，01状态的表情有眨眼动作'
+
+spr emo momoi Anxiety
+txt '绿' '游戏开发部' '<color=lime>spr emo/emoticon {nameId} {emoName}</color>是设置表情动画。'
+
+spr emo midori Action
+txt '绿' '游戏开发部' '本教程在开头提供了表情动画的预览'
+
+spr down momoi
+txt '绿' '游戏开发部' '<color=lime>spr down {nameID}</color>是播放倒地动画。'
+
+spr empty momoi
+txt '绿' '游戏开发部' '<color=lime>spr empty {nameID}</color>是设置空动画，用来还原动画状态。'
+
+spr up momoi
+txt '绿' '游戏开发部' '<color=lime>spr up {nameID}</color>是上升动画。'
+
+spr empty momoi
+spr move midori -10 25
+txt '绿' '游戏开发部' '最后，是和人物位置相关的命令。'
+
+spr x momoi 10
+txt '绿' '游戏开发部' '<color=lime>spr x {nameID} {x}</color>是设置水平位置。建议-10，-5，0，5，10五个位置。'
+
+spr move momoi 0 40
+txt '绿' '游戏开发部' '<color=lime>spr move {nameID} {x} {speed}</color>是以speed速度移动到某位置。'
+
+spr close momoi
+txt '绿' '游戏开发部' '<color=lime>spr close {nameID}</color>是人物靠近。'
+
+spr back momoi
+txt '绿' '游戏开发部' '<color=lime>spr back {nameID}</color>是人物返回位置。'
+
+spr shakeX momoi 10 1 5
+txt '绿' '游戏开发部' '<color=lime>spr shakeX/shakeY {nameId} {抖动速度} {抖动幅度} {抖动周期}</color>是人物X/Y轴抖动。'
+
+spr move midori 0 40
+txt '绿' '游戏开发部' '如果需要调换覆盖顺序。可以使用<color=lime>spr z {z}</color>。'
+
+spr z midori 2
+txt '绿' '游戏开发部' '默认所有角色都在0层，先加载在上面。但可以通过设置图层为1将人物提到前面。'
+
+spr z midori 0
+txt '绿' '游戏开发部' '建议在需要时再使用，以免扰乱自己。'
+
+spr hide momoi
+
+target tEmo
+
+txt '绿' '游戏开发部' '最后是目前已有表情动画的预览。'
+
+spr emo midori Twinkle
+txt '绿' '游戏开发部' 'spr emo midori Twinkle'
+
+spr emo midori Shy
+txt '绿' '游戏开发部' 'spr emo midori Shy'
+
+spr emo midori Anxiety
+txt '绿' '游戏开发部' 'spr emo midori Anxiety'
+
+spr emo midori Action
+txt '绿' '游戏开发部' 'spr emo midori Action'
+
+spr emo midori Idea
+txt '绿' '游戏开发部' 'spr emo midori Idea'
+
+spr emo midori EQ
+txt '绿' '游戏开发部' 'spr emo midori EQ'
+
+spr emo midori Note
+txt '绿' '游戏开发部' 'spr emo midori Note'
+
+spr emo midori E
+txt '绿' '游戏开发部' 'spr emo midori E'
+
+spr emo midori Q
+txt '绿' '游戏开发部' 'spr emo midori Q'
+
+spr emo midori Sweat
+txt '绿' '游戏开发部' 'spr emo midori Sweat'
+
+spr emo midori Chat
+txt '绿' '游戏开发部' 'spr emo midori Chat'
+
+spr emo midori Aggro
+txt '绿' '游戏开发部' 'spr emo midori Aggro'
+
+spr emo midori Heart
+txt '绿' '游戏开发部' 'spr emo midori Heart'
+
+spr emo midori Tear
+txt '绿' '游戏开发部' 'spr emo midori Tear'
+
+spr emo midori Bulb
+txt '绿' '游戏开发部' 'spr emo midori Bulb'
+
+spr emo midori Sigh
+txt '绿' '游戏开发部' 'spr emo midori Sigh'
+
+spr emo midori Sad
+txt '绿' '游戏开发部' 'spr emo midori Sad'
+
+jump tB
+

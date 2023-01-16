@@ -1,0 +1,192 @@
+load spr aris aris_spr
+load bgm Theme_64 Theme_64.ogg
+load bg GameDevRoom BG_GameDevRoom.jpg
+load bg xl BG_CS_PR_03.jpg
+load bg xl2 BG_DestructionFrontPublic.jpg
+
+load cover popup11 popup11.PNG
+load se aex SE_BigLaser_02.wav
+
+load end
+
+bg set GameDevRoom
+banner2 '教程 3' '图片与场景效果'
+
+bgm set Theme_64
+
+label '游戏开发部活动室'
+spr show aris
+
+spr state aris 07
+spr shakeY aris 4 -1 1
+spr emo aris Action
+txt '爱丽丝' '游戏开发部' '接下来将由爱丽丝来引导。'
+
+
+spr state aris 01
+txt '爱丽丝' '游戏开发部' '首先是背景图片，背景图片相关命令以<color=cyan>bg</color>开头。'
+
+spr state aris 00
+bg hide
+txt '爱丽丝' '游戏开发部' '背景消失为<color=cyan>bg hide</color>。'
+
+spr state aris 01
+bg show
+txt '爱丽丝' '游戏开发部' '背景出现为<color=cyan>bg show</color>。'
+
+spr state aris 00
+bg set xl
+label '夏莱办公室'
+txt '爱丽丝' '游戏开发部' '设置背景为<color=cyan>bg set {bgName}</color>。会将当前背景设置为<b>bgName</b>对应的图片。'
+
+spr state aris 05
+txt '爱丽丝' '游戏开发部' '需要注意的是，默认出现效果是自带渐变的。如果需要直接出现。需要在show和hide末尾加一个D（direct）。如：'
+
+spr state aris 00
+bg hideD
+txt '爱丽丝' '游戏开发部' '<color=cyan>bg hideD</color>'
+
+spr state aris 01
+bg showD
+txt '爱丽丝' '游戏开发部' '<color=cyan>bg showD</color>'
+
+spr state aris 00
+txt '爱丽丝' '游戏开发部' '背景抖动命令分别为X轴抖动<color=cyan>shakeX</color>，Y轴抖动<color=cyan>shakeY</color>。'
+
+spr state aris 01
+txt '爱丽丝' '游戏开发部' '因为抖动是<b><i>sin</i></b>函数，所以后面需要跟{抖动速度} {抖动幅度} {抖动周期}组合。'
+
+spr state aris 03
+bg shakeY 10 -40 1
+txt '爱丽丝' '游戏开发部' '所以完整命令为<color=cyan>bg shakeX/shakeY {抖动速度} {抖动幅度} {抖动周期}</color>'
+
+
+spr state aris 00
+spr move aris -10 40
+txt '爱丽丝' '游戏开发部' '覆盖图片与背景图片类似，以<color=cyan>cover</color>开头。'
+
+spr state aris 03
+cover set popup11
+txt '爱丽丝' '游戏开发部' '<color=cyan>cover set {coverName}</color>设置覆盖图片。'
+
+spr state aris 01
+cover hide
+txt '爱丽丝' '游戏开发部' '<color=cyan>cover hide</color>隐藏覆盖图片。'
+
+spr state aris 00
+cover show
+txt '爱丽丝' '游戏开发部' '<color=cyan>cover show</color>显示覆盖图片。'
+cover hide
+
+
+spr x aris -10
+spr state aris 02
+txt '爱丽丝' '游戏开发部' '<color=cyan>curtain</color>是控制幕布的命令，幕布是覆盖在最前面的一块布。'
+
+spr state aris 05
+txt '爱丽丝' '游戏开发部' '和背景命令相似。'
+
+spr state aris 00
+txt '爱丽丝' '游戏开发部' '<color=cyan>curtain show</color>渐变出现。'
+
+curtain show
+===
+
+spr state aris 01
+curtain hide
+txt '爱丽丝' '游戏开发部' '<color=cyan>curtain hide</color>消失。'
+
+spr state aris 02
+txt '爱丽丝' '游戏开发部' '<color=cyan>curtain showD</color>直接出现。'
+
+curtain showD
+===
+
+curtain hide
+spr state aris 05
+txt '爱丽丝' '游戏开发部' '需要注意的是消失是直接消失，没有渐变消失。'
+
+spr state aris 01
+txt '爱丽丝' '游戏开发部' '幕布有<b>黑,白</b>两种颜色，命令为<color=cyan>curtain black/white</color>'
+
+spr state aris 02
+txt '爱丽丝' '游戏开发部' '通过设置幕布为白色，和幕布显示，可出现白色幕布。'
+===
+curtain white
+curtain show
+===
+
+curtain hide
+spr state aris 00
+txt '爱丽丝' '游戏开发部' '如果单独需要幕布效果，需要记得设置断点<color=cyan>===</color>'
+
+spr state aris 07
+spr move aris 0 40
+txt '爱丽丝' '游戏开发部' '最后是场景效果。场景效果是在游戏中遇见而去仿制的效果，所以会有缺少。'
+
+spr state aris 00
+txt '爱丽丝' '游戏开发部' '开发计划为遇见一个加一个。'
+
+spr state aris 01
+txt '爱丽丝' '游戏开发部' '目前有speedline（速度线），和smoke（烟雾）两个效果。'
+
+spr state aris 02
+speedline show
+txt '爱丽丝' '游戏开发部' '<color=cyan>speedline show</color>速度线出现。'
+
+spr state aris 00
+speedline hide
+txt '爱丽丝' '游戏开发部' '<color=cyan>speedline hide</color>速度线消失。'
+
+spr state aris 03
+text size big
+spr close aris
+speedline s 1
+txt '爱丽丝' '游戏开发部' '<color=cyan>speedline s {seconds}</color>可以指定显示秒数。'
+text size medium
+
+spr state aris 00
+spr back aris
+smoke show 
+txt '爱丽丝' '游戏开发部' '<color=cyan>smoke show</color>显示烟雾。'
+
+spr state aris 01
+smoke hide 
+txt '爱丽丝' '游戏开发部' '<color=cyan>smoke hide</color>隐藏烟雾。'
+
+spr state aris 00
+txt '爱丽丝' '游戏开发部' '接下来，爱丽丝要演示一遍上述命令的组合。'
+
+spr state aris 07
+spr move aris -10 40
+cover set popup11
+speedline s 1
+txt '爱丽丝' '游戏开发部' '邦邦啪邦，这是光之剑。'
+
+spr state aris 02
+spr shakeY aris 4 -1 1
+cover hide
+txt '爱丽丝' '游戏开发部' '然后按下B键。'
+
+button '不要...' 'tB' '...我的办公室。' 'tB'
+
+target tB
+
+se set aex
+===
+bg shakeX 20 -40 5
+curtain white
+curtain show
+===
+bg set xl2
+text hide
+spr hide aris
+
+===
+curtain hide
+smoke show
+
+spr showD aris
+===
+
+spr move aris 30 60

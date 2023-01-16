@@ -1,0 +1,74 @@
+load spr yuzu yuzu_spr
+load bgm Theme_64 Theme_64.ogg
+load bg GameDevRoom BG_GameDevRoom.jpg
+
+load se Ambulance SE_Ambulance_02.wav
+load se RetroSuccess SE_RetroSuccess_01.wav
+
+load end
+
+bg set GameDevRoom
+banner2 '教程 4' '背景音乐与音效'
+bgm set Theme_64
+
+label '游戏开发部活动室'
+
+spr show yuzu
+spr state yuzu 03
+txt '柚子' '游戏开发部' '背景音乐与音效都是声音效果。'
+
+spr state yuzu 00
+txt '柚子' '游戏开发部' '所以它们是有类似命令的。'
+
+spr state yuzu 02
+txt '柚子' '游戏开发部' 'set（设置）、play（播放）、pause（暂停）、stop（结束）和v（音量）'
+
+spr state yuzu 00
+txt '柚子' '游戏开发部' '背景音乐命令以<color=orange>bgm</color>开头，音效以<color=orange>se</color>开头，分别组合起来就是：'
+
+spr state yuzu 03
+txt '柚子' '游戏开发部' '<color=orange>bgm/se set {nameId}</color>设置背景音乐/音效。'
+
+bgm pause
+spr state yuzu 00
+txt '柚子' '游戏开发部' '<color=orange>bgm/se pause</color>暂停背景音乐/音效。'
+
+bgm play
+spr state yuzu 01
+txt '柚子' '游戏开发部' '<color=orange>bgm/se play</color>播放背景音乐/音效。'
+
+bgm stop
+spr state yuzu 00
+txt '柚子' '游戏开发部' '<color=orange>bgm/se stop</color>结束背景音乐/音效。'
+
+bgm play
+spr state yuzu 02
+txt '柚子' '游戏开发部' '<color=orange>bgm/se v {volume}</color>设置背景音乐/音效音量。'
+
+bgm v 0.5
+spr state yuzu 00
+txt '柚子' '游戏开发部' 'volume（音量），取值范围为0.0~1.0。'
+
+spr state yuzu 05
+txt '柚子' '游戏开发部' '背景音乐是<b>循环播放</b>的，并且自己还有一个命令。'
+
+bgm down
+spr state yuzu 01
+txt '柚子' '游戏开发部' '<color=orange>bgm down</color>背景音乐逐渐消失。'
+
+spr state yuzu 05
+txt '柚子' '游戏开发部' '音效默认是<b>只播放一次</b>，并且自己还有两个命令。'
+
+se loop
+se set Ambulance
+spr state yuzu 00
+txt '柚子' '游戏开发部' '<color=orange>se loop</color>将音效设置为循环播放。'
+
+se once
+se set RetroSuccess
+spr state yuzu 02
+txt '柚子' '游戏开发部' '<color=orange>se once</color>将音效设置为播放一次。'
+
+spr state yuzu 04
+spr emo yuzu Anxiety
+txt '柚子' '游戏开发部' '我介绍完了，老师可以把柜子还给我了吗...?'
